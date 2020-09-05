@@ -1,8 +1,13 @@
 import React from 'react'
+import { NavContainer } from '../../styles/NavBarStyles'
 
 const NavBar = props => {
 
-    return <h1> Blue </h1>
+    return (
+        <NavContainer>
+            <h1> Blue </h1>
+        </NavContainer>
+    )
 }
 
 export default NavBar
