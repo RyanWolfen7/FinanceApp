@@ -8,6 +8,7 @@ export const NavContainer = styled.div`
     background: #C38D9E -moz-linear-gradient(top, #1E8D7D, #C38D9E) no-repeat;
     filter: progid:DXImageTransforme.Microsoft.gradient(startColorstr=#1E8D7D, endColorstr=#C38D9E) no-repeat;
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B34151, endColorstr=#B34151)" no-repeat;
+    color: #FFFFFF;
     grid-area: 1 / 1 / span 1 / span 6;
     display: grid;
     grid-template-columns: repeat( 5, minmax(0, 1fr));
@@ -23,9 +24,15 @@ export const Title = styled.div`
 
 export const Hamburger = styled(GiHamburgerMenu)`
     align-self: center;
-    font-size: 3vw;
+    font-size: 5vw;
+    cursor: pointer;
+    transition: .5s, 1s;
 
-    &hover: {
-
+    :hover {
+        opacty: .8;
+        background-color: #FFFFFF;
+        color: #C38D9E;
+        padding: auto;
+        border-radius: 5%;
     }
 `
