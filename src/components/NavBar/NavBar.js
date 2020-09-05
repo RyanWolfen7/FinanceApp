@@ -1,11 +1,12 @@
 import React from 'react'
-import { NavContainer } from '../../styles/NavBarStyles'
+import { NavContainer, Title, Hamburger } from '../../styles/NavBarStyles'
 
 const NavBar = props => {
 
     return (
         <NavContainer>
-            <h1> Blue </h1>
+            <Hamburger />
+            <Title> Finance 4 U </Title>
         </NavContainer>
     )
 }
