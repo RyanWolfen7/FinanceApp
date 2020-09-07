@@ -1,6 +1,7 @@
 export default {
+    mainRoute: 'http://localhost:3000/',
     navLinks: {
-        google: 'https://www.google.com/',
+        Markets: 'http://localhost:3000/markets',
         cssTricks: 'https://css-tricks.com/snippets/css/complete-guide-grid/'
     }
 }

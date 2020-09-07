@@ -20,6 +20,16 @@ export const Title = styled.div`
     grid-area: 1 / 2 / span 1 / span 2;
     align-self: center;
     font-size: 5vw;
+    cursor: pointer;
+    transition: .5s, 1s;
+
+    :hover {
+        opacty: .8;
+        background-color: #FFFFFF;
+        color: #C38D9E;
+        padding: auto;
+        border-radius: 5%;
+    }
 `
 
 export const Hamburger = styled(GiHamburgerMenu)`

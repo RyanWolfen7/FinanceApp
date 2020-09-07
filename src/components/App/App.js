@@ -6,7 +6,7 @@ import Schema from './Schema'
 const App = ({ children }) => {
     return (
         <AppWrapper> 
-            <NavBar navLinks={Schema.navLinks}/>
+            <NavBar navLinks={Schema.navLinks} homeLink={Schema.mainRoute}/>
             {children} 
         </AppWrapper>
     )

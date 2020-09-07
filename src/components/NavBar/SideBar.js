@@ -6,10 +6,12 @@ const SideBar = props => {
     const linksList = Object.entries(navLinks)
 
     const renderLinks = () => {
-        // links list 0 is the name, 1 is the href
         return linksList.map( link => {
+            const name = link[0]
+            const address = link[1]
+
             return (
-                <SideNavElement> <a href={link[1]}> {link[0].toUpperCase()} </a> </SideNavElement>
+                <SideNavElement key={name}> <a href={address}> {name.toUpperCase()} </a> </SideNavElement>
             )
         })
     }
