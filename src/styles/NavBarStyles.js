@@ -36,3 +36,16 @@ export const Hamburger = styled(GiHamburgerMenu)`
         border-radius: 5%;
     }
 `
+
+export const SideNav = styled.div`
+    height: 100%;
+    width: ${props => props.width ? props.width : '0' };
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+`
