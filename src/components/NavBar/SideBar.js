@@ -1,12 +1,13 @@
 import React from 'react'
-import { SideNav } from '../../styles/NavBarStyles'
+import { SideNav, CloseButton } from '../../styles/NavBarStyles'
 
 const SideBar = props => {
     const { open, width } = props
+    console.log(props)
 
     return (
         <SideNav width={ open ? width : null}>
-            <h1>Works </h1>
+            <CloseButton> <a href={null}> &times; </a> </CloseButton>
         </SideNav>
     )
 }

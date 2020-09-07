@@ -44,8 +44,30 @@ export const SideNav = styled.div`
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #E27D60;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    dispay: grid;
+`
+
+export const CloseButton = styled.div`
+    display: grid;
+    text-decoration: none;
+    font-size: 3rem;
+    color: #FFFFFF;
+    transition: 0.3s;
+    align-items: center;
+    justify-items: end;
+    padding-right: 2vw;
+    
+    a {
+        cursor: pointer;
+    }
+
+    a:hover {
+        opacty: .8;
+        color: black;
+        padding: auto;
+        border-radius: 5%;
+    }
 `
