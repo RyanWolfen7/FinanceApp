@@ -19,7 +19,7 @@ export const NavContainer = styled.div`
 export const Title = styled.div`
     grid-area: 1 / 2 / span 1 / span 2;
     align-self: center;
-    font-size: 5vw;
+    font-size: 5vh;
     cursor: pointer;
     transition: .5s, 1s;
 
@@ -28,13 +28,13 @@ export const Title = styled.div`
         background-color: #FFFFFF;
         color: #C38D9E;
         padding: auto;
-        border-radius: 5%;
+        border-radius: 2%;
     }
 `
 
 export const Hamburger = styled(GiHamburgerMenu)`
     align-self: center;
-    font-size: 5vw;
+    font-size: 5vh;
     cursor: pointer;
     transition: .5s, 1s;
 
