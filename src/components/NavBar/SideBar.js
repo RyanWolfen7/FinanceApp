@@ -2,12 +2,11 @@ import React from 'react'
 import { SideNav, CloseButton } from '../../styles/NavBarStyles'
 
 const SideBar = props => {
-    const { open, width } = props
-    console.log(props)
+    const { open, width, openSideBar } = props
 
     return (
         <SideNav width={ open ? width : null}>
-            <CloseButton> <a href={null}> &times; </a> </CloseButton>
+            <CloseButton> <a href={null} onClick={ () => { openSideBar()}}> &times; </a> </CloseButton>
         </SideNav>
     )
 }

@@ -11,7 +11,7 @@ const NavBar = props => {
         <NavContainer>
             <Hamburger onClick={() => openSideBar()}/>
             <Title> Finance 4 U </Title>
-            <SideBar {...sideBar} />
+            <SideBar {...sideBar} openSideBar={openSideBar} />
         </NavContainer>
     )
 }
