@@ -12,4 +12,4 @@ const client = axios.create({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default createStore(reducers, composeEnhancers(applyMiddleware(thunk, axiosMiddleware(client))));
+export default createStore(reducers, composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosMiddleware(client)))));
