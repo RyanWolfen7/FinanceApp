@@ -48,26 +48,49 @@ export const SideNav = styled.div`
     overflow-x: hidden;
     transition: 0.5s;
     dispay: grid;
+    place-items: center;
 `
 
 export const CloseButton = styled.div`
     display: grid;
-    text-decoration: none;
-    font-size: 3rem;
     color: #FFFFFF;
-    transition: 0.3s;
     align-items: center;
     justify-items: end;
     padding-right: 2vw;
     
-    a {
+    div {
         cursor: pointer;
+        text-decoration: none;
+        font-size: 3rem;
+        transition: 0.3s;
     }
 
-    a:hover {
+    div:hover {
         opacty: .8;
         color: black;
         padding: auto;
         border-radius: 5%;
     }
+`
+
+export const SideNavElement = styled.div`
+    display: grid;
+    place-items: center;
+    margin-top: 1rem;
+
+    a {
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        transition: ease 0.3s;
+    }
+
+    a:hover {
+        color: #CFFFF8;
+        background: #41B3A3;
+        padding: auto;
+        border-radius: 35%;
+    }
+
 `
