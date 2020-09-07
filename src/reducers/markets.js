@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
         case GET_SUMMARY_SUCCESS:
             return {
                 ...state,
-                gamesList: action.payload.data,
+                summary: action.payload.data,
                 isLoading: false
             }
         case GET_SUMMARY_FAILURE:
