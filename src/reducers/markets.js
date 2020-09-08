@@ -9,14 +9,13 @@ import {
     GET_TRENDING, GET_TRENDING_FAILURE, GET_TRENDING_SUCCESS
 } from '../types/markets'
 
-const initialState = {
+export const initialState = {
     isLoading: false,
     summary: {},
     error: null
 }
 
 export default (state = initialState, action) => {
-    console.log(action)
     switch(action.type) {
         case GET_SUMMARY:
             return {
@@ -26,7 +25,7 @@ export default (state = initialState, action) => {
         case GET_SUMMARY_SUCCESS:
             return {
                 ...state,
-                summary: action.payload.data,
+                summary: action.marketSummaryResponse.result,
                 isLoading: false
             }
         case GET_SUMMARY_FAILURE:

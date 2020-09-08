@@ -14,7 +14,7 @@ const Markets = props => {
     },[])
 
     return ( 
-        <h1> Works   { console.log(summary) } </h1>
+        <h1> Works </h1>
     )
 }
 
