@@ -7,12 +7,14 @@ const Markets = props => {
     const { isLoading, summary, error } = useSelector( state => state.markets)
     const dispatch = useDispatch()
 
+    console.log(summary)
+
     useEffect(() => {
         dispatch(actions.markets.getSummary())
     },[])
 
-    return (
-        <h1> Works </h1>
+    return ( 
+        <h1> Works   { console.log(summary) } </h1>
     )
 }
 

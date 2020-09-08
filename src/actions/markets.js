@@ -8,21 +8,42 @@ import {
     GET_SPARK, GET_SPARK_FAILURE, GET_SPARK_SUCCESS,
     GET_TRENDING, GET_TRENDING_FAILURE, GET_TRENDING_SUCCESS
 } from '../types/markets'
+import reducer from '../reducers/index'
 
 const getSummary = () => {
-    return ({
-        types: [GET_SUMMARY, GET_SUMMARY_SUCCESS, GET_SUMMARY_FAILURE],
-        payload: {
-            requests: {
-                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-summary?region=US&lang=en",
-                method: 'GET',
-                headers: {
-                    "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-                    "x-rapidapi-key": process.env.REACT_APP_MARKET_KEY
-                }
+    return dispatch => {
+
+        fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-summary?region=US&lang=en", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+                "x-rapidapi-key": process.env.REACT_APP_MARKET_KEY
             }
-        }
-    })
+        })
+        .then(response => {
+            const reader = response.body.getReader()
+            const stream = new ReadableStream({
+                start(controller) {
+                    function push() {
+                        reader.read()
+                        .then(({done, value}) => {
+                            if(done) {
+                                controller.close()
+                                return 
+                            }
+                            controller.enqueue(value)
+                            push()
+                        })
+                    }
+                    push()
+                }
+            })
+            reducer({}, new Response(stream, { headers: { 'Content-type': "json" }}))
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
 }
 
 export default {
