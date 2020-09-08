@@ -10,27 +10,19 @@ import {
 } from '../types/markets'
 
 const getSummary = () => {
-    return dispatch => {
-
-        fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-summary?region=US&lang=en", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-                "x-rapidapi-key": process.env.REACT_APP_MARKET_KEY
+    return ({
+        types: [GET_SUMMARY, GET_SUMMARY_SUCCESS, GET_TRENDING_FAILURE],
+        payload: {
+            request: {
+                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-summary?region=US&lang=en",
+                method: 'GET',
+                headers: {
+                    "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+                    "x-rapidapi-key": process.env.REACT_APP_MARKET_KEY
+                }
             }
-        })
-        .then(response => {
-            return response.json()
-        })
-        .then( data => {
-            let formatedData = {...data}
-            formatedData.type = GET_SUMMARY_SUCCESS
-            dispatch(formatedData)  
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    }
+        }
+    })
 }
 
 export default {

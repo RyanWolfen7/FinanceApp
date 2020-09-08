@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
         case GET_SUMMARY_SUCCESS:
             return {
                 ...state,
-                summary: action.marketSummaryResponse.result,
+                summary: action.payload.data.marketSummaryResponse.result,
                 isLoading: false
             }
         case GET_SUMMARY_FAILURE:
