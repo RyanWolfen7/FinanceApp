@@ -12,12 +12,12 @@ const Markets = props => {
     console.log(summary)
 
     useEffect(() => {
-        // dispatch(actions.markets.getSummary())
+        dispatch(actions.markets.getSummary())
     },[])
 
     return ( 
         <>
-            <Summary />
+            <Summary {...summary}/>
         </>
     )
 }
