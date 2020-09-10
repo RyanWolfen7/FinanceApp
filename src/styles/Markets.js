@@ -13,5 +13,15 @@ export const SummaryContainer = styled.div`
 `
 
 export const ExchangeContainer = styled.div`
-    display: grid;
+    overflow-x: auto;
+    animation: moveSlideshow 12s linear infinite;
+
+    @keyframes moveSlideshow {
+        100% { 
+            transform: translateX(-66.6666%);  
+        }
+    }
+`
+export const ExchangeElement = styled.span`
+
 `

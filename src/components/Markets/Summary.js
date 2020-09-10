@@ -1,11 +1,11 @@
 import React from 'react'
-import { SummaryContainer, ExchangeContainer } from '../../styles/Markets'
+import { SummaryContainer, ExchangeContainer, ExchangeElement } from '../../styles/Markets'
 
 const Summary = props => {
-    const { summary = []} = props
+    const { summary } = props
 
     const renderSummary = () => {
-        return summary.map( exchangeObj => {
+        return summary.map( (exchangeObj, index) => {
             const { 
                 exchange, regularMarketChange, regularMarketChangePercent,
                 regularMarketPreviousClose, regularMarketPrice, regularMarketTime 
@@ -14,17 +14,15 @@ const Summary = props => {
             const findIncrease = regularMarketPrice.raw > regularMarketPreviousClose.raw
 
             return (
-                <ExchangeContainer key={exchange} id={exchange}> 
+                <ExchangeElement key={index}> 
                     {exchange}: {regularMarketPrice.fmt} <span {...findIncrease}> {regularMarketChangePercent.fmt} </span> {regularMarketTime.fmt}
-                </ExchangeContainer>
+                </ExchangeElement>
             )
         })
     }
 
     return (
-        <SummaryContainer>
-            {summary && renderSummary()}
-        </SummaryContainer>
+        <SummaryContainer> <ExchangeContainer>{summary.length && renderSummary()} </ExchangeContainer></SummaryContainer>
     )
 }
 
