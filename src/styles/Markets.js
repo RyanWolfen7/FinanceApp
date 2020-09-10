@@ -35,7 +35,8 @@ export const ExchangeElement = styled.div`
     margin-right: 4vw;
     margin-left: 1vw;
     span {
-        color: ${ props => { return props.positive ? 'green' : 'red' }};
+        color: ${ props => { return props.positive ? '#39ff14' : '#FF0000' }};
+        font-weight: 900;
         padding: 0 1vw 0;
     }
 `
