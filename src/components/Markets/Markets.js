@@ -8,9 +8,8 @@ const Markets = props => {
     const { isLoading, summary = [], error } = useSelector( state => state.markets)
     const dispatch = useDispatch()
 
-
     useEffect(() => {
-        dispatch(actions.markets.getSummary())
+        // dispatch(actions.markets.getSummary())
     },[])
 
     return ( 

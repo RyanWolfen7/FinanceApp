@@ -3,7 +3,7 @@ import { SummaryContainer, ExchangeContainer, ExchangeElement } from '../../styl
 
 const Summary = props => {
     const { summary } = props
-
+    
     const renderSummary = () => {
         return summary.map( (exchangeObj, index) => {
             const { 
@@ -22,7 +22,7 @@ const Summary = props => {
     }
 
     return (
-        <SummaryContainer> <ExchangeContainer>{summary.length && renderSummary()} </ExchangeContainer></SummaryContainer>
+        <SummaryContainer> <ExchangeContainer firstStart={false}>{summary.length && renderSummary()} </ExchangeContainer></SummaryContainer>
     )
 }
 
