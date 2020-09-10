@@ -1,28 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SummaryContainer, ExchangeContainer, ExchangeElement } from '../../styles/Markets'
 
 const Summary = props => {
     const { summary } = props
-    
+    const [ firstStart, setFirstStart] = useState(true)
+
+    useEffect(() => {
+
+    }, [summary])
+
     const renderSummary = () => {
         return summary.map( (exchangeObj, index) => {
-            const { 
-                exchange, regularMarketChange, regularMarketChangePercent,
-                regularMarketPreviousClose, regularMarketPrice, regularMarketTime 
-            } = exchangeObj
-
-            const findIncrease = regularMarketPrice.raw > regularMarketPreviousClose.raw
-
+            const { regularMarketChangePercent, regularMarketPrice, regularMarketTime, symbol } = exchangeObj
+            const positive = regularMarketChangePercent.raw > 0
+            
             return (
-                <ExchangeElement key={index}> 
-                    {exchange}: {regularMarketPrice.fmt} <span {...findIncrease}> {regularMarketChangePercent.fmt} </span> {regularMarketTime.fmt}
+                <ExchangeElement key={symbol} positive={positive}> 
+                    {symbol}: &nbsp; {regularMarketPrice.fmt} <span> {regularMarketChangePercent.fmt} </span> {regularMarketTime.fmt}
                 </ExchangeElement>
             )
         })
     }
 
     return (
-        <SummaryContainer> <ExchangeContainer firstStart={false}>{summary.length && renderSummary()} </ExchangeContainer></SummaryContainer>
+        <SummaryContainer> 
+            <ExchangeContainer firstStart={firstStart} length={summary.length}>
+                {summary.length && renderSummary()} 
+            </ExchangeContainer>
+        </SummaryContainer>
     )
 }
 

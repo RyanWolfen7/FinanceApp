@@ -8,21 +8,23 @@ export const SummaryContainer = styled.div`
     height: 50%;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
-    display: flex;
+    display: grid;
     align-items: center;
 `
 
 export const ExchangeContainer = styled.div`
-    display: flex;
     overflow-x: none;
     white-space: nowrap;
     align-items: center;
-    transform:${ props => { return props.firstStart ? 'translateX(101vw)' : 'none' }};
+    transform:${ props => { return props.firstStart ? 'translateX(100vw)' : 'none' }};
     
-    animation: moveSlideshow 25s linear infinite;
+    animation: ${props => {
+        const timer = props.length * 3
+        return `moveSlideshow ${timer}s linear infinite`
+    }};
     @keyframes moveSlideshow {
         100% { 
-            transform: translateX(-85%);  
+            transform: translateX(-100%);  
         }
     }
     
@@ -30,9 +32,11 @@ export const ExchangeContainer = styled.div`
 export const ExchangeElement = styled.div`
     display: inline-block;
     align-self: center;
-
+    margin-right: 4vw;
+    margin-left: 1vw;
     span {
-        color: ${ props => { return props.findIncrease ? 'green' : 'red'}};
+        color: ${ props => { return props.positive ? 'green' : 'red' }};
+        padding: 0 1vw 0;
     }
 `
 
