@@ -1,3 +1,5 @@
+const { GET_SUMMARY_FAILURE } = require("../src/types/markets");
+
 const getSummary = () => {
     return dispatch => {
 
@@ -17,7 +19,9 @@ const getSummary = () => {
             dispatch(formatedData)  
         })
         .catch(err => {
-            console.log(err);
+            let formatedData = {...err}
+            formatedData.type = GET_SUMMARY_FAILURE
+            dispatch(formatedData) 
         });
     }
 }
