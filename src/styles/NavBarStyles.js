@@ -86,7 +86,7 @@ export const CloseButton = styled.div`
 export const SideNavElement = styled.div`
     display: grid;
     place-items: center;
-    margin-top: 1rem;
+    margin: 1rem;
 
     a {
         cursor: pointer;
