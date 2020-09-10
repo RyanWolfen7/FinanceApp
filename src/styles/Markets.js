@@ -16,7 +16,7 @@ export const ExchangeContainer = styled.div`
     overflow-x: none;
     white-space: nowrap;
     align-items: center;
-    transform:${ props => { return props.firstStart ? 'translateX(100vw)' : 'none' }};
+    transform:${ props =>  props.firstStart ? 'translateX(100vw)' : 'none' };
     
     animation: ${props => {
         const timer = props.length * 3
@@ -35,15 +35,8 @@ export const ExchangeElement = styled.div`
     margin-right: 4vw;
     margin-left: 1vw;
     span {
-        color: ${ props => { return props.positive ? '#39ff14' : '#FF0000' }};
+        color: ${ props => props.positive ? '#39ff14' : '#FF0000' };
         font-weight: 900;
         padding: 0 1vw 0;
     }
 `
-
-// animation: moveSlideshow 1s linear infinite;
-// @keyframes moveSlideshow {
-//     100% { 
-//         transform: translateX(-50%);  
-//     }
-// }
