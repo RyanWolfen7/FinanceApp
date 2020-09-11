@@ -8,7 +8,8 @@ import mockMovers from '../../mocks/markets/marketMovers.json'
 const Movers = props => {
     const { isLoading, movers = [], error } = useSelector( state => state.markets)
     const dispatch = useDispatch()
-    
+    console.log(mockMovers.finance.result)
+
     useEffect(() => {
         // dispatch(actions.markets.getMovers())
     }, [])

@@ -49,6 +49,7 @@ export const Hamburger = styled(GiHamburgerMenu)`
 
 export const SideNav = styled.div`
     height: 100%;
+    transition: 4s;
     width: ${props => props.width ? props.width : '0' };
     position: fixed;
     z-index: 1;
@@ -56,7 +57,6 @@ export const SideNav = styled.div`
     left: 0;
     background-color: #E27D60;
     overflow-x: hidden;
-    transition: 0.5s;
     dispay: grid;
     place-items: center;
 `

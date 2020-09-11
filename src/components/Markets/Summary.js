@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { SummaryContainer, ExchangeContainer, ExchangeElement } from '../../styles/Markets'
 
+// add second react component here that handles the fetch request and resends after the animation time has been completed 
+// this way only the ticker divs will update and not rerender the ticker background
 const Summary = props => {
     const { summary } = props
     const [ firstStart, setFirstStart] = useState(true)
