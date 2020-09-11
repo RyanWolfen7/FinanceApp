@@ -1,5 +1,6 @@
 import {
     GET_SUMMARY, GET_SUMMARY_SUCCESS, GET_SUMMARY_FAILURE,
+    GET_MOVERS, GET_MOVERS_SUCCESS, GET_MOVERS_FAILURE
 } from '../types/markets'
 
 const getSummary = () => {
@@ -18,8 +19,25 @@ const getSummary = () => {
     })
 }
 
+const getMovers = () => {
+    return ({
+        types: [GET_MOVERS, GET_MOVERS_SUCCESS, GET_MOVERS_FAILURE],
+        payload: {
+            request: {
+                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-movers?region=US&lang=en-US&start=0&count=6",
+                method: 'GET',
+                headers: {
+                    "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+                    "x-rapidapi-key": process.env.REACT_APP_MARKET_KEY
+                }
+            }
+        }
+    })
+}
+
 export default {
-    getSummary
+    getSummary,
+    getMovers
 }
 
 // GET_AUTO_COMPLETE, GET_AUTO_COMPLETE_SUCCESS, GET_AUTO_COMPLETE_FAILURE,

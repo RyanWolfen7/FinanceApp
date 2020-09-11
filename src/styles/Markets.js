@@ -40,3 +40,7 @@ export const ExchangeElement = styled.div`
         padding: 0 1vw 0;
     }
 `
+
+export const MoversContainer = styled.div`
+    grid-area: 3 / 4 / span 3 / span 3;
+`

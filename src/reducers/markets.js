@@ -1,10 +1,11 @@
 import {
     GET_SUMMARY, GET_SUMMARY_SUCCESS, GET_SUMMARY_FAILURE,
+    GET_MOVERS, GET_MOVERS_SUCCESS, GET_MOVERS_FAILURE
 } from '../types/markets'
 
 export const initialState = {
     isLoading: false,
-    summary: {},
+    data: {},
     error: null
 }
 
@@ -18,10 +19,28 @@ export default (state = initialState, action) => {
         case GET_SUMMARY_SUCCESS:
             return {
                 ...state,
-                summary: action.payload.data.marketSummaryResponse.result,
+                data: action.payload.data.marketSummaryResponse.result,
                 isLoading: false
             }
         case GET_SUMMARY_FAILURE:
+            return {
+                ...state,
+                error: action.error.response.data,
+                isLoading: false,
+            }
+        case GET_MOVERS:
+            return {
+                ...state,
+                isLoading: true
+            }
+        case GET_MOVERS_SUCCESS:
+            console.log(action.payload.data.finance.result)
+            return {
+                ...state,
+                data: action.payload.data.finance.result,
+                isLoading: false
+            }
+        case GET_MOVERS_FAILURE:
             return {
                 ...state,
                 error: action.error.response.data,
