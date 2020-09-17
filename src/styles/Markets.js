@@ -5,7 +5,7 @@ export const MarketContainer = styled.div`
     display: grid;
     grid-template-columns: repeat( 5, minmax(0, 1fr));
     grid-auto-rows: auto;
-    grid-gap: 5em;
+    grid-gap: 3em;
 `
 
 export const SummaryContainer = styled.div`
@@ -53,6 +53,22 @@ export const MoversContainer = styled.div`
     grid-column-start: 4;
     grid-column-end: 6;
     background: #E8A87C;
-    border-radius: 5%;
-    height: 100%;
+    border-radius: 2%;
+    display: grid;
+`
+
+export const MoversHeader = styled.h1`
+    margin: .5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 2%;
+    color: white;
+`
+
+export const MoversBody = styled.div`
+    background: #CFFEF8;
+    margin: .5rem;
+    border-radius: 2%;
+    display: grid;
+    place-items: center;
 `

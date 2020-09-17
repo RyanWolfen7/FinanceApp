@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import { MoversContainer } from '../../../styles/Markets'
+import { MoversContainer, MoversHeader, MoversBody } from '../../../styles/Markets'
 import { useSelector, useDispatch } from 'react-redux';
 import actions from '../../../actions'
+import { SpinnerDiamond  } from 'spinners-react'
 
 const Movers = props => {
     const { isLoading, movers = [], error } = useSelector( state => state.markets)
@@ -13,9 +14,10 @@ const Movers = props => {
 
     return (
         <MoversContainer>
-            <h1>here</h1>
-            <h1>here</h1>
-            <h1>here</h1>
+            <MoversHeader> Movers </MoversHeader>
+            <MoversBody> 
+                <SpinnerDiamond color={'#CFFEF8'} secondaryColor={'#C38D9E'} enabled={isLoading}/>
+            </MoversBody>
         </MoversContainer>
     )
 }
