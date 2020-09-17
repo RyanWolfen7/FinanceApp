@@ -51,8 +51,7 @@ export const Hamburger = styled(GiHamburgerMenu)`
 
 export const SideNav = styled.div`
     height: 100%;
-    transition: 4s;
-    width: ${props => props.width ? props.width : '0' };
+    max-width: ${ props => props.open ? '100%' : '0'};
     position: fixed;
     z-index: 1;
     top: 0;
@@ -61,6 +60,7 @@ export const SideNav = styled.div`
     overflow-x: hidden;
     dispay: grid;
     place-items: center;
+    transition: ${ props => props.open ? '3s ease' : '.5s ease'};
 `
 
 export const CloseButton = styled.div`
@@ -68,7 +68,7 @@ export const CloseButton = styled.div`
     color: #FFFFFF;
     align-items: center;
     justify-items: end;
-    padding-right: 2vw;
+    padding-right: .5vw;
     
     div {
         cursor: pointer;

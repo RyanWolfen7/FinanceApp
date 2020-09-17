@@ -86,9 +86,9 @@ export const MoverContainer = styled.div`
     border-radius: 2%;
     display: grid;
     place-contents: stretch;
-    transition: .5s, 1s;
     margin: .5rem;
     width: 100%;
+    transition: all 1s ease;
 `
 
 export const MoverHeader = styled.h3`
@@ -98,6 +98,7 @@ export const MoverHeader = styled.h3`
     border-radius: 2%;
     color: white;
     cursor: pointer;
+    transition: all 1s ease;
 
     :hover {
         background: #E27D60;
@@ -106,12 +107,13 @@ export const MoverHeader = styled.h3`
 
 export const MoverBody = styled.div`
     background: #CFFEF8;
-    margin: .25rem;
+    margin: ${props => props.hidden ? '0' : '.25rem' };
     border-radius: 2%;
     display: grid;
     place-items: center;
-    padding: 0 .5rem 0;
-    transition: all .1s ease;
-    display:  ${props => props.hidden ? 'none' : 'grid'};
-    
+    padding: ${props => props.hidden ? '0' : '0 .5rem 0' };
+    opacity: ${props => props.hidden ? '0' : '1' };
+    max-height: ${props => props.hidden ? '0' : '100%'};
+    overflow: hidden;
+    transition: 1s ease;
 `

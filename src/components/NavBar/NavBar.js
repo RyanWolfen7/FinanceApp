@@ -4,7 +4,7 @@ import SideBar from './SideBar'
 
 const NavBar = props => {
     const { navLinks, homeLink } = props
-    const [sideBar, setSideBar ] = useState({ open: false, width: 'auto'})
+    const [sideBar, setSideBar ] = useState({ open: false })
 
     const openSideBar = () => { setSideBar({...sideBar, open: !sideBar.open})}
 

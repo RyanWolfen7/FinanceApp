@@ -2,7 +2,7 @@ import React from 'react'
 import { SideNav, SideNavElement, CloseButton } from '../../styles/NavBarStyles'
 
 const SideBar = props => {
-    const { open, width, openSideBar, navLinks } = props
+    const { open, openSideBar, navLinks } = props
     const linksList = Object.entries(navLinks)
 
     const renderLinks = () => {
@@ -17,7 +17,7 @@ const SideBar = props => {
     }
 
     return (
-        <SideNav width={ open ? width : null}>
+        <SideNav open={open}>
             <CloseButton> <div onClick={ () => { openSideBar()}}> &times; </div> </CloseButton>
             {renderLinks()}
         </SideNav>
