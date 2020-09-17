@@ -14,6 +14,7 @@ export const NavContainer = styled.div`
     grid-template-columns: repeat( 5, minmax(0, 1fr));
     align-content: center;
     justify-items: center;
+    height: 9vh;
 `
 
 export const Title = styled.div`

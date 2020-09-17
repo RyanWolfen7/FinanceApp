@@ -1,15 +1,23 @@
 import styled from 'styled-components'
 
+export const MarketContainer = styled.div`
+    grid-area: 2 / 1 / span 9 / span 5;
+    display: grid;
+    grid-template-columns: repeat( 5, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 5em;
+`
+
 export const SummaryContainer = styled.div`
-    grid-area: 2 / 1 / span 1 / span 5; 
+    grid-area: 1 / 1 / span 1 / span 5; 
     color: white;
     background: black;
     opacity: 0.7;
-    height: 50%;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
     display: grid;
     align-items: center;
+    height: 4.5vh;
 `
 
 export const ExchangeContainer = styled.div`
@@ -42,5 +50,9 @@ export const ExchangeElement = styled.div`
 `
 
 export const MoversContainer = styled.div`
-    grid-area: 3 / 4 / span 3 / span 3;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    background: #E8A87C;
+    border-radius: 5%;
+    height: 100%;
 `

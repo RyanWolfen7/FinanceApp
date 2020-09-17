@@ -14,6 +14,8 @@ const Movers = props => {
     return (
         <MoversContainer>
             <h1>here</h1>
+            <h1>here</h1>
+            <h1>here</h1>
         </MoversContainer>
     )
 }
