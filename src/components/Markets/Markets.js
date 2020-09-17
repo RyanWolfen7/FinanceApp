@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router';
 import actions from '../../actions'
-import Summary from './Summary';
-import Movers from './Movers';
+import Summary from './Summary/Summary';
+import Movers from './Movers/Movers';
 
 // delete after testing
 import mockSummary from '../../mocks/markets/marketSummary.json'
