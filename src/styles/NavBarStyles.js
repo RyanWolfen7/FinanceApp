@@ -21,6 +21,7 @@ export const Title = styled.div`
     grid-area: 1 / 2 / span 1 / span 2;
     align-self: center;
     font-size: 5vh;
+    width: max-content;
     cursor: pointer;
     transition: .5s, 1s;
 

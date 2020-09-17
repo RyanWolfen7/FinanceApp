@@ -3,13 +3,18 @@ import styled from 'styled-components'
 export const MarketContainer = styled.div`
     grid-area: 2 / 1 / span 9 / span 5;
     display: grid;
-    grid-template-columns: repeat( 5, minmax(0, 1fr));
-    grid-auto-rows: auto;
     grid-gap: 3em;
+    margin: 0;
+`
+
+export const MarketBody = styled.div`
+    grid-template-columns: repeat( 2, minmax(0, 1fr));
+    display: grid;
+    grid-gap: .5em;
+
 `
 
 export const SummaryContainer = styled.div`
-    grid-area: 1 / 1 / span 1 / span 5; 
     color: white;
     background: black;
     opacity: 0.7;
@@ -50,11 +55,13 @@ export const ExchangeElement = styled.div`
 `
 
 export const MoversContainer = styled.div`
-    grid-column-start: 4;
-    grid-column-end: 6;
+    width: 25vw;
+    min-width: fit-content;
+    place-self: end;
     background: #E8A87C;
     border-radius: 2%;
     display: grid;
+    transition: .5s, 1s;
 `
 
 export const MoversHeader = styled.h1`
@@ -71,4 +78,40 @@ export const MoversBody = styled.div`
     border-radius: 2%;
     display: grid;
     place-items: center;
+    padding: 0 .5rem 0;
+`
+
+export const MoverContainer = styled.div`
+    background: #C38D9E;
+    border-radius: 2%;
+    display: grid;
+    place-contents: stretch;
+    transition: .5s, 1s;
+    margin: .5rem;
+    width: 100%;
+`
+
+export const MoverHeader = styled.h3`
+    margin: 0rem;
+    display: grid;
+    place-items: center;
+    border-radius: 2%;
+    color: white;
+    cursor: pointer;
+
+    :hover {
+        background: #E27D60;
+    }
+`
+
+export const MoverBody = styled.div`
+    background: #CFFEF8;
+    margin: .25rem;
+    border-radius: 2%;
+    display: grid;
+    place-items: center;
+    padding: 0 .5rem 0;
+    transition: all .1s ease;
+    display:  ${props => props.hidden ? 'none' : 'grid'};
+    
 `
