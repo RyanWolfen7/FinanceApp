@@ -16,7 +16,7 @@ export const ExchangeContainer = styled.div`
     overflow-x: none;
     white-space: nowrap;
     align-items: center;
-    transform:${ props =>  props.firstStart ? 'translateX(100vw)' : 'none' };
+    transform: translateX(100vw);
     
     animation: ${props => {
         const timer = props.length * 3

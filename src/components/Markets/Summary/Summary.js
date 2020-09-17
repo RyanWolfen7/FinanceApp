@@ -8,7 +8,6 @@ import actions from '../../../actions'
 const Summary = props => {
     const { isLoading, summary = [], error } = useSelector( state => state.markets)
     const dispatch = useDispatch()
-    const [ firstStart, setFirstStart] = useState(true)
 
     useEffect(() => {
         // dispatch(actions.markets.getSummary())
@@ -29,7 +28,7 @@ const Summary = props => {
 
     return (
         <SummaryContainer> 
-            <ExchangeContainer firstStart={firstStart} length={summary.length}>
+            <ExchangeContainer length={summary.length}>
                 {summary.length && renderSummary()} 
             </ExchangeContainer>
         </SummaryContainer>
