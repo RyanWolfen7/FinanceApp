@@ -85,11 +85,9 @@ export const MoverContainer = styled.div`
     background: #C38D9E;
     border-radius: 2%;
     display: grid;
-    place-contents: stretch;
     margin: .5rem;
     width: 100%;
     max-height: 100%;
-    overflow: hidden;
 `
 
 export const MoverHeader = styled.h3`
@@ -115,5 +113,5 @@ export const MoverBody = styled.div`
     opacity: ${props => props.hidden ? '0' : '1' };
     max-height: ${props => props.hidden ? '0' : '100%'};
     overflow: hidden;
-    transition: ${props => props.hidden ? '.5s ease' : '1s ease'};
+    transition: ${props => props.hidden ? '.3s ease' : '1s ease'};
 `
