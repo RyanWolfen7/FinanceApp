@@ -10,7 +10,7 @@ const MoverModal = props => {
     }
 
     return(
-        <MoverContainer>
+        <MoverContainer hidden={bodyHidden}>
             <MoverHeader onClick={() => { handleOpen() }}> { title } </MoverHeader>
             <MoverBody hidden={bodyHidden}>
                 <h1>a</h1>

@@ -88,7 +88,8 @@ export const MoverContainer = styled.div`
     place-contents: stretch;
     margin: .5rem;
     width: 100%;
-    transition: all 1s ease;
+    max-height: 100%;
+    overflow: hidden;
 `
 
 export const MoverHeader = styled.h3`
@@ -98,7 +99,6 @@ export const MoverHeader = styled.h3`
     border-radius: 2%;
     color: white;
     cursor: pointer;
-    transition: all 1s ease;
 
     :hover {
         background: #E27D60;
@@ -115,5 +115,5 @@ export const MoverBody = styled.div`
     opacity: ${props => props.hidden ? '0' : '1' };
     max-height: ${props => props.hidden ? '0' : '100%'};
     overflow: hidden;
-    transition: 1s ease;
+    transition: ${props => props.hidden ? '.5s ease' : '1s ease'};
 `
