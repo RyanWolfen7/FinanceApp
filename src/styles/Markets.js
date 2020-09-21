@@ -113,7 +113,7 @@ export const MoverBody = styled.div`
     max-height: ${props => props.hidden ? '0' : '100%'};
     overflow: hidden;
     transition: ${props => props.hidden ? '.3s ease' : '1s ease'};
-    grid-template-columns: repeat( 2, minmax(0, 1fr));
+    grid-template-columns: 20% 80%;
     place-items: center; 
 `
 
@@ -128,5 +128,10 @@ export const MoverDescription = styled.div`
 `
 
 export const MoverItem = styled.div`
-    min-width: max-content; 
+    background: #E27D60;
+    height: 50%;
+    width: 100%;
+    color: #FFFFFF;
+    display: grid;
+    place-items: center; 
 `

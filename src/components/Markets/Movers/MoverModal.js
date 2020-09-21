@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { MoverContainer, MoverHeader, MoverBody, MoverDiscriptor, MoverDescription } from '../../../styles/Markets'
+import { 
+    MoverContainer, MoverHeader, MoverBody,
+    MoverDiscriptor, MoverDescription, MoverItem
+} from '../../../styles/Markets'
 
 const MoverModal = props => {
     const { id, description, title, quotes } = props
@@ -9,7 +12,16 @@ const MoverModal = props => {
         setBodyHidden(!bodyHidden)
     }
 
-    console.log(props)
+    const renderQuotes = () => {
+        return quotes.map(( quote, index )=> {
+            const { exchange, symbol, } = quote
+            console.log(quote)
+            return (<>
+                <MoverDiscriptor> # {index + 1} </MoverDiscriptor>
+                <MoverItem>{ symbol } {exchange} </MoverItem>
+                </>)
+        })  
+    }
 
     return(
         <MoverContainer hidden={bodyHidden}>
@@ -17,6 +29,7 @@ const MoverModal = props => {
             <MoverBody hidden={bodyHidden}>
                 <MoverDiscriptor> Description: </MoverDiscriptor>
                 <MoverDescription> {description} </MoverDescription>
+                { quotes.length && renderQuotes()}
             </MoverBody>
         </MoverContainer>
     )
