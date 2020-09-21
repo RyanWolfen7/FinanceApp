@@ -3,12 +3,14 @@ import {
     GET_MOVERS, GET_MOVERS_SUCCESS, GET_MOVERS_FAILURE
 } from '../types/markets'
 
-const getSummary = () => {
+const getSummary = params => {
+    const { region = 'US' } = params
+
     return ({
         types: [GET_SUMMARY, GET_SUMMARY_SUCCESS, GET_SUMMARY_FAILURE],
         payload: {
             request: {
-                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary?region=US",
+                url: `https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary?region=${region}`,
                 method: 'GET',
                 headers: {
                     "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
@@ -19,12 +21,14 @@ const getSummary = () => {
     })
 }
 
-const getMovers = () => {
+const getMovers = params => {
+    const { region = 'US', start = '0', lang = 'en-US', count = '6' } = params || {}
+
     return ({
         types: [GET_MOVERS, GET_MOVERS_SUCCESS, GET_MOVERS_FAILURE],
         payload: {
             request: {
-                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-movers?region=US&start=0&lang=en-US&count=6",
+                url: `https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-movers?region=${region}&start=${start}&lang=${lang}&count=${count}`,
                 method: 'GET',
                 headers: {
                     "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",

@@ -7,6 +7,7 @@ import Mover from './MoverModal'
 
 const Movers = props => {
     const { isLoading, movers = [], error } = useSelector( state => state.markets)
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const Movers = props => {
             <MoversHeader> Movers </MoversHeader>
             <MoversBody> 
                 <SpinnerDiamond color={'#CFFEF8'} secondaryColor={'#C38D9E'} enabled={isLoading}/>
-                { movers.length && renderMovers()}
+                { !isLoading && movers.length && renderMovers()}
             </MoversBody>
         </MoversContainer>
     )

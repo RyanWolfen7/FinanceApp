@@ -55,7 +55,7 @@ export const ExchangeElement = styled.div`
 `
 
 export const MoversContainer = styled.div`
-    min-width: fit-content;
+    min-width: 100%;
     place-self: end;
     background: #E8A87C;
     border-radius: 2%;
