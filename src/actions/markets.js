@@ -8,7 +8,7 @@ const getSummary = () => {
         types: [GET_SUMMARY, GET_SUMMARY_SUCCESS, GET_SUMMARY_FAILURE],
         payload: {
             request: {
-                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-summary?region=US&lang=en",
+                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary?region=US",
                 method: 'GET',
                 headers: {
                     "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
@@ -24,7 +24,7 @@ const getMovers = () => {
         types: [GET_MOVERS, GET_MOVERS_SUCCESS, GET_MOVERS_FAILURE],
         payload: {
             request: {
-                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-movers?region=US&lang=en-US&start=0&count=6",
+                url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-movers?region=US&start=0&lang=en-US&count=6",
                 method: 'GET',
                 headers: {
                     "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",

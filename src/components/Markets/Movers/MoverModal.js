@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { 
     MoverContainer, MoverHeader, MoverBody,
     MoverDiscriptor, MoverDescription, MoverItem
@@ -15,11 +15,10 @@ const MoverModal = props => {
     const renderQuotes = () => {
         return quotes.map(( quote, index )=> {
             const { exchange, symbol, } = quote
-            console.log(quote)
-            return (<>
+            return (<Fragment key={ exchange + symbol}>
                 <MoverDiscriptor> # {index + 1} </MoverDiscriptor>
                 <MoverItem>{ symbol } {exchange} </MoverItem>
-                </>)
+                </Fragment>)
         })  
     }
 
