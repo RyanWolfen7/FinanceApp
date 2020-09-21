@@ -55,7 +55,6 @@ export const ExchangeElement = styled.div`
 `
 
 export const MoversContainer = styled.div`
-    width: 25vw;
     min-width: fit-content;
     place-self: end;
     background: #E8A87C;
@@ -94,7 +93,7 @@ export const MoverHeader = styled.h3`
     margin: 0rem;
     display: grid;
     place-items: center;
-    border-radius: 2%;
+    border-radius: 5%;
     color: white;
     cursor: pointer;
 
@@ -114,4 +113,20 @@ export const MoverBody = styled.div`
     max-height: ${props => props.hidden ? '0' : '100%'};
     overflow: hidden;
     transition: ${props => props.hidden ? '.3s ease' : '1s ease'};
+    grid-template-columns: repeat( 2, minmax(0, 1fr));
+    place-items: center; 
+`
+
+export const MoverDiscriptor = styled.div`
+    display: grid;
+    margin: 1rem;
+`
+
+export const MoverDescription = styled.div`
+    display: grid;
+    margin: 1rem;
+`
+
+export const MoverItem = styled.div`
+    min-width: max-content; 
 `

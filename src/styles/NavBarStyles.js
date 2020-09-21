@@ -102,7 +102,7 @@ export const SideNavElement = styled.div`
         color: #CFFFF8;
         background: #41B3A3;
         padding: auto;
-        border-radius: 35%;
+        border-radius: 3%;
     }
 
 `
