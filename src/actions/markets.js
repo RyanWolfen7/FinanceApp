@@ -4,7 +4,7 @@ import {
 } from '../types/markets'
 
 const getSummary = params => {
-    const { region = 'US' } = params
+    const { region = 'US' } = params || {}
 
     return ({
         types: [GET_SUMMARY, GET_SUMMARY_SUCCESS, GET_SUMMARY_FAILURE],
