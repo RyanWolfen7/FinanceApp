@@ -57,6 +57,9 @@ export const ExchangeElement = styled.div`
 export const MoversContainer = styled.div`
     min-width: 100%;
     place-self: end;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 6;
     background: #E8A87C;
     border-radius: 2%;
     display: grid;
