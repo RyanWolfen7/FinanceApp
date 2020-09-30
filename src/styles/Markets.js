@@ -93,7 +93,7 @@ export const MoverHeader = styled.h3`
     margin: 0rem;
     display: grid;
     place-items: center;
-    border-radius: 5%;
+    border-radius: 2%;
     color: white;
     cursor: pointer;
 
